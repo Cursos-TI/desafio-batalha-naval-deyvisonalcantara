@@ -1,103 +1,100 @@
-# ⚠️ Importante!!!
-Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vontade para começar pelo desafio que mais lhe interessa.
 
-# Desafio Batalha Naval - Três Níveis de Complexidade
 
-Bem-vindo ao desafio "Batalha Naval"! Este projeto desafiará suas habilidades de programação utilizando vetores e matrizes para simular um jogo de Batalha Naval, dividido em três níveis: Novato, Aventureiro e Mestre. Em cada nível, novas funcionalidades serão adicionadas, tornando o desafio progressivamente mais complexo.
+# 🛳️ Batalha Naval – Habilidades em Formas Geométricas (C)
 
-## 🏅 Nível Novato
+Este projeto implementa um **tabuleiro de Batalha Naval** com a capacidade de aplicar habilidades especiais representadas por matrizes geométricas (cone, cruz e octaedro) que afetam áreas específicas do mapa.
 
-Neste nível inicial, você implementará a lógica básica de posicionamento de navios em um tabuleiro de Batalha Naval utilizando vetores bidimensionais.
-
-### 🚩 Objetivos:
-- **Posicionamento dos Navios:** O sistema deve simular a localização de dois navios no tabuleiro, um posicionado verticalmente e outro horizontalmente.
-- **Utilização de Vetores:** Os navios serão posicionados utilizando vetores bidimensionais, com coordenadas X e Y.
-- **Exibição de Coordenadas:** O sistema deve exibir as coordenadas de cada parte dos navios no console utilizando `printf`.
-
-### 📥 Entrada de Dados:
-- Os valores serão inseridos manualmente por meio de variáveis no código.
-
-### 📤 Saída de Dados:
-- Após o posicionamento, o sistema deve exibir as coordenadas dos navios de forma clara e organizada.
-
----
-
-## 🏅 Nível Aventureiro
-
-No nível Aventureiro, você expandirá o tabuleiro e adicionará mais navios, incluindo posicionamentos na diagonal.
-
-### 🆕 Diferença em relação ao Nível Novato:
-- **Tabuleiro 10x10:** O tabuleiro será expandido para uma matriz 10x10.
-- **Posicionamento de Quatro Navios:** O sistema deverá posicionar quatro navios, incluindo dois na diagonal.
-- **Exibição Completa do Tabuleiro:** O sistema exibirá toda a matriz, onde 0 indica uma posição sem navio e 3 indica uma posição ocupada.
-
-### 🚩 Novas Funcionalidades:
-- **Matriz 10x10:** Implementação de uma matriz maior para representar o tabuleiro.
-- **Posicionamento de Navios na Diagonal:** Adição de navios posicionados diagonalmente.
-- **Exibição do Tabuleiro Completo:** O sistema mostrará o tabuleiro completo, indicando as posições ocupadas e livres.
-
----
-
-## 🏅 Nível Mestre
-
-No nível Mestre, o desafio se intensifica com a implementação de habilidades especiais representadas por matrizes específicas no tabuleiro.
-
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Habilidades Especiais:** O sistema deve definir áreas de habilidades utilizando matrizes com padrões específicos: cone, cruz e octaedro.
-- **Estruturas de Repetição Aninhadas:** Utilização de loops aninhados para percorrer e preencher as áreas afetadas pelas habilidades.
-
-### 🚩 Novas Funcionalidades:
-- **Matrizes de Habilidades:** Implementação de três matrizes para representar habilidades especiais no tabuleiro.
-- **Padrões de Habilidade:** Criação de padrões específicos (cone, cruz, octaedro) para definir as áreas afetadas.
-- **Exibição das Áreas Atingidas:** O sistema exibirá o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas afetadas.
-
-### Exemplo de Saída:
-
-Exemplo e comando:
-printf("%d ",matriz[i][j]);
-
-### Exemplo de saída de habilidade em cone:
-
-0 0 1 0 0
-
-0 1 1 1 0
-
-1 1 1 1 1
-
-### Exemplo de saída de habilidade em octaedro:
-
-0 0 1 0 0
-
-0 1 1 1 0
-
-0 0 1 0 0
-
-### Exemplo de saída de habilidade em cruz:
-
-0 0 1 0 0
-
-1 1 1 1 1
-
-0 0 1 0 0
+O propósito é demonstrar o uso de **matrizes 2D**, **posicionamento espacial**, limites de tabuleiro e geometria por condicionais, aplicados em linguagem C.
 
 
 
+📌 Funcionalidades do Projeto
 
+ ✔️ 1. Tabuleiro de 10x10
+
+Inicializado com água (valor `0`).
+
+✔️ 2. Navios
+
+Representados pelo valor `3` (definido em `#define NAVIO`).
+
+✔️ 3. Habilidades especiais
+
+As habilidades têm tamanho `7x7` e utilizam valor `1` na matriz de habilidade, mas são desenhadas no tabuleiro com `5`.
+
+As formas disponíveis são:
+
+* 🔺 **Cone** (aponta para baixo)
+* ✛ **Cruz**
+* 🔷 **Octaedro/Losango**
+
+ ✔️ 4. Aplicação da habilidade
+
+A habilidade é "sobreposta" no tabuleiro respeitando:
+
+* Posição central indicada
+* Limites (bordas não geram erro)
+* Navios não são sobrescritos
+
+
+## 🎨 Representações no Tabuleiro
+
+| Símbolo | Significado                  |
+| ------- | ---------------------------- |
+| `0`     | Água                         |
+| `3`     | Navio                        |
+| `5`     | Habilidade especial aplicada |
 
 ---
 
-## 📋 Requisitos Funcionais Comuns
-- **Entrada de Dados:** Os valores serão inseridos manualmente por meio de variáveis no código.
-- **Utilização de Matrizes:** Os dados devem ser estruturados de maneira eficiente utilizando matrizes.
-- **Exibição de Resultados:** Os resultados devem ser exibidos de forma clara e organizada.
+ 🚀 Como Executar
 
-## 📌 Requisitos Não Funcionais Comuns
-- **Performance:** O sistema deve executar operações de forma eficiente, sem atrasos perceptíveis.
-- **Documentação:** O código deve ser bem documentado, com comentários claros sobre a função de cada parte do código.
-- **Manutenibilidade:** O código deve ser organizado e fácil de entender, facilitando futuras manutenções e expansões.
+1. Copie o código para um arquivo `.c`
+   Exemplo: `batalhaNaval.c`
+
+2. Compile o programa:
+
+```bash
+gcc batalhaNaval.c -o batalha
+```
+
+3. Execute:
+
+```bash
+./batalha
+```
 
 ---
 
-Boa sorte no desenvolvimento deste desafio! Aproveite para aprimorar suas habilidades em vetores e matrizes enquanto progride pelos níveis.
+🧩 Exemplo de Aplicação
 
-Equipe de Ensino - MateCheck
+As habilidades são aplicadas no `main()` desta forma:
+
+```c
+aplicarHabilidade(tabuleiro, cone, 1, 5);
+aplicarHabilidade(tabuleiro, cruz, 7, 2);
+aplicarHabilidade(tabuleiro, octaedro, 5, 7);
+```
+
+Cada habilidade tem um **centro**, e o desenho é projetado ao redor.
+
+---
+ 🔍 Objetivo Didático
+
+Este projeto ajuda você a aprender:
+
+* Manipulação de matrizes em C
+* Criação de padrões geométricos via lógica condicional
+* Respeitar limites de matriz
+* Gerenciamento de camadas (navio vs habilidade)
+* Visualização e debugging de matrizes
+
+---
+
+ 📄 Licença
+
+Este projeto é livre para uso acadêmico e aprendizado.
+
+---
+
+
